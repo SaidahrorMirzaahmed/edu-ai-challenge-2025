@@ -1,0 +1,28 @@
+**Step 1: Analyze "Social platform with millions of users"**  
+This requires a horizontally scalable database to handle massive user growth. Traditional relational databases (e.g., MySQL) struggle with horizontal scaling, making NoSQL databases better suited due to distributed architectures.
+
+**Step 2: Analyze "Store profiles, posts, and user connections"**  
+Profiles and posts are semi-structured (suitable for document databases). User connections are graph-like relationships (best handled by graph databases). A hybrid approach may be needed, but the dominant data type (posts/profiles) should drive selection.
+
+**Step 3: Analyze "High data read speed required"**  
+Read-heavy workloads (80%) demand optimized read performance. Document databases (e.g., MongoDB) offer fast reads via denormalization and indexing. Graph databases (e.g., Neo4j) excel at relationship queries but may lag in bulk post retrieval.
+
+**Step 4: Analyze "80% read operations, 20% write operations"**  
+Document databases handle read-heavy workloads efficiently through replication and sharding. Write-heavy systems (e.g., key-value stores) are less optimal here. Caching layers (e.g., Redis) can supplement read speed.
+
+**Step 5: Analyze "Scalability is critical"**  
+NoSQL databases scale horizontally via sharding. Graph databases scale poorly horizontally. Document databases (e.g., MongoDB, Couchbase) scale seamlessly across servers, aligning with user growth.
+
+**Step 6: Eliminate unsuitable databases**  
+- *Relational (SQL):* Poor horizontal scalability; rigid schema limits flexibility.  
+- *Key-value/Columnar:* Optimized for specific use cases (session data/analytics), not relationships.  
+- *Graph:* Ideal for connections but inefficient for post/profile storage and mass reads.  
+- **Document databases** remain the strongest candidate: flexible schema, fast reads, and proven scalability.
+
+**Conclusion: Document Database (e.g., MongoDB)**  
+**Why:** Balances fast read performance (via indexing/replication), horizontal scalability (sharding), and flexible data modeling for profiles/posts. User connections can be managed through embedded documents or lightweight graph extensions.  
+**Implementation Example:**  
+- Store user profiles and posts as JSON documents.  
+- Use embedded arrays for "followers" (1:few relationships).  
+- For complex connections (e.g., mutual friends), add a graph layer (e.g., MongoDB Atlas Graph).  
+- Scale reads via replica sets; shard data across clusters by user ID.

@@ -1,0 +1,21 @@
+You are a database expert. Using Chain-of-Thought reasoning, analyze the requirements below and select the most suitable database type for a new social platform application. Break down your reasoning step by step:
+
+**Requirements:**
+1. Social platform with millions of users
+2. Store profiles, posts, and user connections
+3. High data read speed required
+4. Expected workload: 80% read operations, 20% write operations
+5. Scalability is critical as the user base grows
+
+**Instructions:**
+- Analyze each requirement individually.
+- Compare database types (e.g., relational, document, graph, key-value, columnar).
+- Explain how each requirement impacts the database choice.
+- Justify eliminations of unsuitable database types.
+- Conclude with the best database type and a brief implementation example.
+
+Structure your response as:
+**Step 1: [Analysis of Requirement 1]**
+**Step 2: [Analysis of Requirement 2]**  
+...  
+**Conclusion: [Selected Database] + [Implementation Example]**

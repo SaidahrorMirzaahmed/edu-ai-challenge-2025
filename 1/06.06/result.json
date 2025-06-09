@@ -1,0 +1,28 @@
+[
+    {
+      "sentiment": "Negative",
+      "isRelevant": true,
+      "mainSubject": "sensor tracking and dongle functionality",
+      "positives": [],
+      "painPoints": [
+        "sensor stops tracking intermittently",
+        "problem persists even when plugged in",
+        "dongle did not work",
+        "had to return first mouse"
+      ],
+      "improvementSuggestions": [],
+      "featuresMentioned": ["sensor tracking", "dongle"],
+      "userExpertise": "Experienced"
+    },
+    {
+      "sentiment": "Mixed",
+      "isRelevant": true,
+      "mainSubject": "overall product value",
+      "positives": ["product has no flaws"],
+      "painPoints": ["product not worth the price compared to cheaper alternatives"],
+      "improvementSuggestions": [],
+      "featuresMentioned": ["price", "performance"],
+      "userExpertise": "Unknown"
+    }
+  ]
+  

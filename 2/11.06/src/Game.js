@@ -33,7 +33,8 @@ export class Game {
     for (let i = 0; i < this.boardSize; i++) {
       let rowStr = i + ' ';
       for (let j = 0; j < this.boardSize; j++) {
-        rowStr += this.cpu.board.getCell(i, j) + ' ';
+        const cell = this.cpu.board.getCell(i, j);
+        rowStr += (cell === 'X' || cell === 'O' ? cell : '~') + ' ';
       }
       rowStr += '    ' + i + ' ';
       for (let j = 0; j < this.boardSize; j++) {

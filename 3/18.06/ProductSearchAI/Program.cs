@@ -14,18 +14,13 @@ namespace ProductSearchAI
     {
         static async Task Main(string[] args)
         {
-            // Load configuration from appsettings.json
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
+            // Set your OpenAI API key and model here
+            string apiKey = "your-api-key-here"; // <-- PUT YOUR KEY HERE
+            string model = "gpt-4";
 
-            string apiKey = config["OpenAI:ApiKey"];
-            string model = config["OpenAI:Model"] ?? "gpt-4";
-
-            if (string.IsNullOrEmpty(apiKey))
+            if (string.IsNullOrEmpty(apiKey) || apiKey == "your-api-key-here")
             {
-                Console.WriteLine("OpenAI API key not found in appsettings.json.");
+                Console.WriteLine("OpenAI API key not set in code. Please set your API key in the source.");
                 return;
             }
 

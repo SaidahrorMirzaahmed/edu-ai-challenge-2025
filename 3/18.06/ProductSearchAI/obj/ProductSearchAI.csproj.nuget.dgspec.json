@@ -1,0 +1,89 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/protochka/RiderProjects/edu-ai-challenge-2025/3/18.06/ProductSearchAI/ProductSearchAI.csproj": {}
+  },
+  "projects": {
+    "/Users/protochka/RiderProjects/edu-ai-challenge-2025/3/18.06/ProductSearchAI/ProductSearchAI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/protochka/RiderProjects/edu-ai-challenge-2025/3/18.06/ProductSearchAI/ProductSearchAI.csproj",
+        "projectName": "ProductSearchAI",
+        "projectPath": "/Users/protochka/RiderProjects/edu-ai-challenge-2025/3/18.06/ProductSearchAI/ProductSearchAI.csproj",
+        "packagesPath": "/Users/protochka/.nuget/packages/",
+        "outputPath": "/Users/protochka/RiderProjects/edu-ai-challenge-2025/3/18.06/ProductSearchAI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/protochka/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Betalgo.OpenAI": {
+              "target": "Package",
+              "version": "[8.7.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "OpenAI.API": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

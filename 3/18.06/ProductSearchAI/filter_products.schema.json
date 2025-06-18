@@ -1,0 +1,26 @@
+{
+  "name": "filter_products",
+  "description": "Filter products by category, price, rating, and stock",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "category": {
+        "type": "string",
+        "description": "Desired category (e.g., Electronics)"
+      },
+      "max_price": {
+        "type": "number",
+        "description": "Maximum price user is willing to pay"
+      },
+      "min_rating": {
+        "type": "number",
+        "description": "Minimum acceptable rating"
+      },
+      "in_stock": {
+        "type": "boolean",
+        "description": "Whether the item must be in stock"
+      }
+    },
+    "required": []
+  }
+} 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProductSearchAI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82edc39bd9df03ee3847cce985f96682be7034f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec2f15d8086daa07bcaae1bf973188c03fe2ce19")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProductSearchAI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProductSearchAI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -166,7 +166,7 @@ class AudioTranscriber:
     
     def save_transcription(self, transcript: str, audio_filename: str) -> str:
         """
-        Save transcription to a file.
+        Save transcription to a file with timestamp.
         
         Args:
             transcript: The transcribed text
@@ -175,7 +175,9 @@ class AudioTranscriber:
         Returns:
             Path to the saved transcription file
         """
-        transcription_file = "transcription.md"
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        base_name = Path(audio_filename).stem
+        transcription_file = self.output_dir / f"transcription_{base_name}_{timestamp}.md"
         
         with open(transcription_file, 'w', encoding='utf-8') as f:
             f.write(f"# Transcription: {audio_filename}\n")
@@ -183,11 +185,11 @@ class AudioTranscriber:
             f.write(transcript)
         
         print(f"Transcription saved to: {transcription_file}")
-        return transcription_file
+        return str(transcription_file)
     
     def save_summary(self, summary: str, audio_filename: str) -> str:
         """
-        Save summary to a file.
+        Save summary to a file with timestamp.
         
         Args:
             summary: The summary text
@@ -196,7 +198,9 @@ class AudioTranscriber:
         Returns:
             Path to the saved summary file
         """
-        summary_file = "summary.md"
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        base_name = Path(audio_filename).stem
+        summary_file = self.output_dir / f"summary_{base_name}_{timestamp}.md"
         
         with open(summary_file, 'w', encoding='utf-8') as f:
             f.write(f"# Summary: {audio_filename}\n")
@@ -204,11 +208,11 @@ class AudioTranscriber:
             f.write(summary)
         
         print(f"Summary saved to: {summary_file}")
-        return summary_file
+        return str(summary_file)
     
     def save_analysis(self, analytics: Dict[str, Any], audio_filename: str) -> str:
         """
-        Save analytics to a JSON file.
+        Save analytics to a JSON file with timestamp.
         
         Args:
             analytics: The analytics data
@@ -217,13 +221,15 @@ class AudioTranscriber:
         Returns:
             Path to the saved analysis file
         """
-        analysis_file = "analysis.json"
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        base_name = Path(audio_filename).stem
+        analysis_file = self.output_dir / f"analysis_{base_name}_{timestamp}.json"
         
         with open(analysis_file, 'w', encoding='utf-8') as f:
             json.dump(analytics, f, indent=2, ensure_ascii=False)
         
         print(f"Analysis saved to: {analysis_file}")
-        return analysis_file
+        return str(analysis_file)
     
     def process_audio_file(self, audio_file_path: str) -> Dict[str, str]:
         """

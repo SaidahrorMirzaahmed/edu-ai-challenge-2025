@@ -34,16 +34,38 @@ def main():
         for file_type, file_path in results.items():
             print(f"  {file_type.title()}: {file_path}")
         
-        print("\n✓ All required files created successfully!")
-        print("  - transcription.md")
-        print("  - summary.md") 
-        print("  - analysis.json")
+        # Create the required files for submission
+        create_submission_files(results)
         
         return 0
         
     except Exception as e:
         print(f"Error processing audio: {e}")
         return 1
+
+def create_submission_files(results):
+    """Create the required files for task submission."""
+    print("\nCreating submission files...")
+    
+    # Copy the generated files to the root directory with required names
+    import shutil
+    
+    # Copy transcription
+    if os.path.exists(results['transcription']):
+        shutil.copy2(results['transcription'], 'transcription.md')
+        print("✓ Created transcription.md")
+    
+    # Copy summary
+    if os.path.exists(results['summary']):
+        shutil.copy2(results['summary'], 'summary.md')
+        print("✓ Created summary.md")
+    
+    # Copy analysis
+    if os.path.exists(results['analysis']):
+        shutil.copy2(results['analysis'], 'analysis.json')
+        print("✓ Created analysis.json")
+    
+    print("\nAll submission files created successfully!")
 
 if __name__ == "__main__":
     exit(main()) 
